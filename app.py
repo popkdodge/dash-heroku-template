@@ -553,7 +553,10 @@ def update_graph3(Milage, condition, Year, Color, Transmission, Cabriolet, S_RS)
 
     graph2 = fig2.to_dict()
     return graph2
-
+@server.route('/favicon.ico')
+def favicon():
+    return flask.send_from_directory(os.path.join(server.root_path, 'static'),
+                                     'favicon.ico')
 # Run the Dash app
 if __name__ == '__main__':
     model = joblib.load('https://github.com/popkdodge/Unit-2-Build/blob/master/911_Price.pkl?raw=true')
