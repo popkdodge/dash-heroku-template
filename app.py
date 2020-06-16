@@ -559,5 +559,5 @@ def favicon():
                                      'favicon.ico')
 # Run the Dash app
 if __name__ == '__main__':
-    model = joblib.load('https://github.com/popkdodge/Unit-2-Build/blob/master/911_Price.pkl?raw=true')
+    model = joblib.load('911_Price.pkl')
     app.server.run(debug=True, threaded=True)
