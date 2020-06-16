@@ -556,5 +556,5 @@ def update_graph3(Milage, condition, Year, Color, Transmission, Cabriolet, S_RS)
 
 # Run the Dash app
 if __name__ == '__main__':
-    model = joblib.load('Unit-2-Build/911_Price.pkl')
+    model = joblib.load('https://github.com/popkdodge/Unit-2-Build/blob/master/911_Price.pkl?raw=true')
     app.server.run(debug=True, threaded=True)
