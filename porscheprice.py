@@ -1,12 +1,7 @@
-# Import required libraries
-import os
-from random import randint
+## Bootstrap Grid tutorial - adding style to the app
 
-import plotly as py
-
-import flask
+# -*- coding: utf-8 -*-
 import dash
-from dash.dependencies import Input, Output, State, Event
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -17,17 +12,8 @@ import pickle
 import pandas as pd
 import numpy as np
 import plotly.express as px
-
-
-# Setup the app
-# Make sure not to change this file name or the variable names below,
-# the template is configured to execute 'server' on 'app.py'
-server = flask.Flask(__name__)
-server.secret_key = os.environ.get('secret_key', str(randint(0, 1000000)))
-app = dash.Dash(__name__, server=server)
-
-
-# Put your Dash code here
+import plotly.express as px
+#test model data & df
 test_model_data = pd.read_csv('https://raw.githubusercontent.com/popkdodge/Unit-2-Build/master/Test_Car.csv',index_col=[0])
 test_model_data = test_model_data.T
 df = pd.read_csv('https://raw.githubusercontent.com/popkdodge/Unit-2-Build/master/Carrera_911_1_2.csv',index_col=[0])
@@ -554,8 +540,6 @@ def update_graph3(Milage, condition, Year, Color, Transmission, Cabriolet, S_RS)
 
     graph2 = fig2.to_dict()
     return graph2
-
-# Run the Dash app
 if __name__ == '__main__':
     model = joblib.load('Unit-2-Build/911_Price.pkl')
-    app.server.run(debug=True, threaded=True)
+    app.run_server(debug=True)
