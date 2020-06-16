@@ -37,7 +37,7 @@ np.random.seed(1)
 mean = df.Price[df.Year==number[0]].mean()
 std = df.Price[df.Year==number[0]].std()
 x = np.random.randn(10000)
-model = joblib.load('Unit-2-Build/911_Price.pkl')
+model = joblib.load('911_Price.pkl')
 price = model.predict(test_model_data)
 spot = (mean-price[0])/std
 hist_data = [x]
@@ -383,7 +383,7 @@ def update_year_and_std(Milage, condition, Year, Color, Transmission, Cabriolet,
     mean = df.Price[df.Year==number].mean()
     std = df.Price[df.Year==number].std()
     x = np.random.randn(10000)
-    model = joblib.load('Unit-2-Build/911_Price.pkl')
+    model = joblib.load('911_Price.pkl')
     price = model.predict(test_model_data)
     spot = (mean-price[0])/-std
     hist_data = [x]
